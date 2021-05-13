@@ -73,11 +73,6 @@ const menu = [
   },
 ];
 
-const allBtn = document.querySelector(".all");
-const koreaBtn = document.querySelector(".korea");
-const japanBtn = document.querySelector(".japan");
-const chinaBtn = document.querySelector(".china");
-
 const koreanFood = menu.filter((food) => food.category === "Korea");
 const chineseFood = menu.filter((food) => food.category === "China");
 const japanFood = menu.filter((food) => food.category === "Japan");
@@ -110,10 +105,31 @@ const renderFood = (type) => {
   });
 };
 
+const btnContainer = document.querySelector(".btn-container");
+let btnList = [];
+
+const allBtn = document.createElement("BUTTON");
+btnList.push(allBtn);
+const koreaBtn = document.createElement("BUTTON");
+btnList.push(koreaBtn);
+const japanBtn = document.createElement("BUTTON");
+btnList.push(japanBtn);
+const chinaBtn = document.createElement("BUTTON");
+btnList.push(chinaBtn);
+
+allBtn.innerHTML = "All";
+koreaBtn.innerHTML = "Korea";
+japanBtn.innerHTML = "Japan";
+chinaBtn.innerHTML = "China";
+
+btnList.forEach((btn) => {
+  btn.classList.add("btn", "btn-item");
+  btnContainer.appendChild(btn);
+});
 
 allBtn.addEventListener("click", renderFood.bind(null, menu));
 koreaBtn.addEventListener("click", renderFood.bind(null, koreanFood));
 japanBtn.addEventListener("click", renderFood.bind(null, chineseFood));
 chinaBtn.addEventListener("click", renderFood.bind(null, japanFood));
 
-window.addEventListener('DOMContentLoaded', renderFood(menu));
+window.addEventListener("DOMContentLoaded", renderFood(menu));
