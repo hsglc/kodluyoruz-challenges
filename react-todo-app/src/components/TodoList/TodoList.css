@@ -8,3 +8,20 @@
   color: red;
   text-decoration-color: blue;
 }
+
+.button {
+  border-radius: .3rem;
+  padding: .4rem .5rem;
+  border-color: #f44336;
+  color: red;
+  font-size: 1.8rem;
+  float: right;
+  cursor: pointer;
+  margin: -4.2rem -2rem;
+
+}
+
+.button:hover {
+  background: #f44336;
+  color: white;
+}
