@@ -1,0 +1,46 @@
+.sections {
+    display: flex;
+    justify-content: center;
+}
+
+footer  {
+    display: flex;
+    justify-content: center;
+    
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.left-frame {
+    background: #7EE5DA;
+    margin: 1rem;
+    padding: .5rem;
+}
+
+.center-frame {
+    background:#70CCC2;
+    margin: 1rem;
+    padding: .5rem;
+}
+.right-frame {
+    background: #62B3AA;
+    margin: 1rem;
+    padding: .5rem;
+}
+
+li {
+    list-style-type: none;
+}
+
+.h3-tag {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
