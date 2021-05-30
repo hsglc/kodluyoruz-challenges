@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürünler</title>
+    <link rel="icon" href="img/note.png">
+    <link rel="stylesheet" href="global.css">
+
+    <style>
+        .products {
+            color: #9c3d54;
+            text-align: center;
+        }
+
+        .products ul {
+            max-width: 300px;
+            margin: 0 auto;
+            list-style-type: none;
+        }
+
+        ul li {
+            width: 100%;
+            max-height: 300px;
+            margin: 100px 0px;
+            transition: transform .9s ease;
+            transition-delay: .1s;
+        }
+
+        ul li:after{
+            content: "Ürün $0";
+        }
+
+        li img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: fill;
+            
+        }
+
+        li:hover{
+            transform: scale(1.5) rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="baslik">
+            <h1>Müzik Dükkanım</h1>
+        </div>
+        <nav class="nav">
+            <a href="index.html">Anasayfa</a>
+            <a href="products.html">Ürünlerimiz</a>
+            <a href="about.html">Hakkımızda</a>
+        </nav>
+    </header>
+
+    <div class="products">
+        <h2>Ürünlerimiz</h2>
+        <ul>
+            <li>
+                <img src="https://images.musicstore.de/images/1280/yamaha-c40-classical-guitar-_1_GIT0000636-000.jpg"
+                    alt="">
+            </li>
+            <li>
+                <img src="https://www.melbournemusiccentre.com.au/pub/media/catalog/product/cache/3b000f45776ea2396d229b308c7a15d3/7/6/76011.jpg"
+                    alt="">
+            </li>
+
+            <li>
+                <img src="https://www.stgd.ch/1980-large_default/st-junior-fr-12-fiesta-red-electric-guitar-with-10-mm-cover-prodipe-guitars-jmfstjuniorfr.jpg"
+                    alt="">
+            </li>
+            <li>
+                <img src="https://images.musicstore.de/images/1280/yamaha-c40-classical-guitar-_1_GIT0000636-000.jpg"
+                    alt="">
+            </li>
+            <li>
+                <img src="https://cdn.korg.com/tr/products/upload/778786bc42fe9c8f4f4c4b24eb9bd503_sp.png"
+                    alt="">
+            </li>
+            <li>
+                <img src="https://5.imimg.com/data5/SELLER/Default/2020/8/PC/OO/QM/3506213/musical-violin-500x500.jpg"
+                    alt="">
+            </li>
+            <li>
+                <img src="https://st1.myideasoft.com/idea/dl/53/myassets/products/521/st5045fic-1.jpg?revision=1554942267"
+                    alt="">
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
