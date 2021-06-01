@@ -1,0 +1,31 @@
+.form {
+    background: rgb(27, 57, 64);
+    background: linear-gradient(103deg, rgba(27, 57, 64, 1) 25%, rgba(200, 56, 142, 1) 65%, rgba(93, 56, 145, 1) 92%);
+    margin: 2rem auto;
+    width: 60%;
+    padding: 1.6rem;
+    border-radius: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 1.5rem;
+}
+
+label {
+    margin: .8rem;
+}
+
+input {
+    margin-left: .7rem;
+    padding: .4rem;
+    border-radius: .2rem;
+    border: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

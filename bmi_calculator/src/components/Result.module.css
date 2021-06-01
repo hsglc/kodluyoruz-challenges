@@ -1,0 +1,38 @@
+.result {
+    background: rgb(27, 57, 64);
+    background: linear-gradient(103deg, rgba(27, 57, 64, 1) 25%, rgba(200, 56, 142, 1) 65%, rgba(93, 56, 145, 1) 92%);
+    width: 60%;
+    margin: 1rem auto;
+    padding: 1.5rem;
+    font-size: 1.4rem;
+    color: #c4b7a6;
+    border-radius: 10px;
+}
+
+
+.table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.bmi {
+    color: white;
+    font-size: 1.4rem;
+}

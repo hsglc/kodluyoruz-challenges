@@ -1,31 +1,22 @@
 import Home from "./components/Form";
+
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Result from "./components/Result";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import Bmi from "./components/Bmi";
+import Nav from "./components/Nav";
 
 function App() {
   return (
     <Router>
-      <ul>
-        <li>
-          <Link to="/bmi">What's BMI</Link>
-        </li>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        
-      </ul>
+      <Nav />
 
       <Switch>
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/bmi">
+        <Route path="/bmi">
           <Bmi />
-        </Route>
-        <Route path="/result">
-          <Result />
         </Route>
       </Switch>
     </Router>

@@ -1,0 +1,36 @@
+.nav {
+    display: flex;
+    justify-content: center;
+
+}
+
+li {
+    margin: 1rem;
+}
+
+.normal {
+    background: #ccc;
+    color: #000;
+
+
+}
+
+a {
+    padding: .8rem;
+    border-radius: 6px;
+}
+
+.active {
+    background: gray;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+ul {
+    list-style-type: none;
+
+}
+
+a {
+    text-decoration-line: none;
+}

@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import classes from "./Bmi.module.css";
+
 
 function Bmi() {
   return (
-    <div>
+    <div className={classes.bmi}>
       <h2>What is the body mass index (BMI)?</h2>
       <p>
         The body mass index (BMI) is a measure that uses your height and weight
@@ -24,12 +25,6 @@ function Bmi() {
         <li>between 18.5 and 24.9 – you're in the healthy weight range</li>
         <li>between 25 and 29.9 – you're in the overweight range</li>
         <li>between 30 and 39.9 – you're in the obese range</li>
-        <li>
-          <Link to="/" >
-            If you want to calculate your BMI, try our healthy weight
-            calculator.
-          </Link>
-        </li>
       </ul>
     </div>
   );
