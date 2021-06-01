@@ -1,10 +1,13 @@
+import Products from "../components/Products";
+import Header from "../layout/Header";
+
 function Home() {
-    return (
-        <>
-            
-        
-        </>
-    )
+  return (
+    <>
+      <Header />
+      <Products />
+    </>
+  );
 }
 
-export default Home
+export default Home;

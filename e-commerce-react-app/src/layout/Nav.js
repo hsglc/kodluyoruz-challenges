@@ -14,13 +14,25 @@ function Nav() {
         <li>
           {" "}
           <NavLink to="/women" activeClassName={classes.active}>
-            Women
+            Women Clothes
           </NavLink>{" "}
         </li>
         <li>
           {" "}
           <NavLink to="/men" activeClassName={classes.active}>
-            Men
+            Men Clothes
+          </NavLink>{" "}
+        </li>
+        <li>
+          {" "}
+          <NavLink to="/jewelery" activeClassName={classes.active}>
+            Jeweleries
+          </NavLink>{" "}
+        </li>
+        <li>
+          {" "}
+          <NavLink to="/electronics" activeClassName={classes.active}>
+            Electronics
           </NavLink>{" "}
         </li>
       </ul>
