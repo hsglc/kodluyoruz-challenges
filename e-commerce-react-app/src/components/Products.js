@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import Product from "./Product";
 
 function Products() {
   const history = useHistory();
@@ -26,15 +27,12 @@ function Products() {
     fetchProds();
   }, [endpoint]);
 
-
-
-
   console.log(products);
 
   return (
     <div>
-      {products.map(item => (
-        <h2 key={item.id} >{item.title}</h2>
+      {products.map((item) => (
+        <Product key={item.id} item={item} />
       ))}
     </div>
   );
