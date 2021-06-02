@@ -8,6 +8,7 @@ function Header() {
       <header className={classes.header}>
         <h1>React Clothes</h1>
         <FaStoreAlt className={classes.icon} />
+        <div>Hello</div>
       </header>
       <Nav />
     </>

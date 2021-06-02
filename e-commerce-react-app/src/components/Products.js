@@ -9,7 +9,7 @@ function Products() {
   const history = useHistory();
 
   const endpoint = history.location.pathname;
-  console.log(endpoint);
+  
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ function Products() {
       baseURL = `https://fakestoreapi.com/products`;
     }
 
-    console.log(baseURL);
+    
     const fetchProds = async () => {
       const response = await fetch(baseURL);
       const data = await response.json();
@@ -30,7 +30,7 @@ function Products() {
     fetchProds();
   }, [endpoint]);
 
-  console.log(products);
+  
 
   return (
     <div className={classes.container} >

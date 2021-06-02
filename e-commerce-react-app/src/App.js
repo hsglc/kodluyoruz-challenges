@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import ProductDetail from "./components/ProductDetail";
 
 import Home from "./pages/Home";
 
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route path="/electronics">
           <Home />
+        </Route>
+        <Route path="/:id" >
+            <ProductDetail />
         </Route>
       </Switch>
     </Router>
