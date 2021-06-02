@@ -1,6 +1,9 @@
+
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Product from "./Product";
+import classes from './Products.module.css'
+
 
 function Products() {
   const history = useHistory();
@@ -30,7 +33,7 @@ function Products() {
   console.log(products);
 
   return (
-    <div>
+    <div className={classes.container} >
       {products.map((item) => (
         <Product key={item.id} item={item} />
       ))}
