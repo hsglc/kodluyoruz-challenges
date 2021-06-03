@@ -1,6 +1,8 @@
 import { FaStoreAlt } from "react-icons/fa";
-import Cart from "../components/Cart";
+import Cart from "../components/Cart/Cart";
+
 import classes from "./Header.module.css";
+
 import Nav from "./Nav";
 
 function Header() {

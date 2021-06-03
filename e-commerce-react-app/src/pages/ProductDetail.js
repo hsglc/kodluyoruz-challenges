@@ -1,5 +1,5 @@
 import { useLocation, useHistory } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 import Card from "@material-ui/core/Card";
@@ -17,16 +17,17 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Button from "@material-ui/core/Button";
+import CartContext from "../store/cart-context";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
+    maxWidth: 400,
     margin: "0 auto",
-    height : "100vh",
+    height: "90vh",
   },
   media: {
-    height: 160,
-    paddingTop: "56.25%", // 16:9
+    height: 100,
+    paddingTop: "56.25%",
   },
   expand: {
     transform: "rotate(0deg)",
@@ -46,6 +47,8 @@ const useStyles = makeStyles((theme) => ({
 function ProductDetail() {
   const location = useLocation();
   const history = useHistory();
+  const [item, setItem] = useState();
+  const cartCtx = useContext(CartContext);
 
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
@@ -58,7 +61,9 @@ function ProductDetail() {
     history.push("/");
   };
 
-  const [item, setItem] = useState();
+  const addItemToCartHandler = () => {
+    cartCtx.addItem(item);
+  };
 
   useEffect(() => {
     const fetchItem = async () => {
@@ -84,7 +89,6 @@ function ProductDetail() {
       {item && (
         <Card className={classes.root}>
           <CardHeader
-            
             action={
               <IconButton aria-label="settings">
                 <MoreVertIcon />
@@ -93,11 +97,7 @@ function ProductDetail() {
             title="Sales Manager"
             subheader="Wednesday June, 2, 2021"
           />
-          <CardMedia
-            className={classes.media}
-            image={item.image}
-            
-          />
+          <CardMedia className={classes.media} image={item.image} />
           <CardContent>
             <Typography variant="body2" color="textSecondary" component="p">
               {item.title}
@@ -107,11 +107,11 @@ function ProductDetail() {
             <IconButton aria-label="add to favorites">
               <FavoriteIcon />
             </IconButton>
-            <Button color="primary">Add to cart</Button>
-            <Button
-              color="secondary"
-              onClick={backHomeHandler}
-            >
+            <Button color="primary" onClick={addItemToCartHandler.bind(item)}>
+              Add to cart
+            </Button>
+
+            <Button color="secondary" onClick={backHomeHandler}>
               Back to home
             </Button>
             <IconButton

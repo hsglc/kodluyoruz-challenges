@@ -6,7 +6,6 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import {useHistory} from 'react-router-dom';
 
 const useStyles = makeStyles({
   root: {
@@ -24,13 +23,7 @@ const useStyles = makeStyles({
   },
 });
 
-function Product(props) {
-  const history = useHistory();
-  const productDetailHandler = () => {
-    
-    history.push(`/${props.item.id}`)
-  }
-
+const ProductUI = (props) => {
   const classes = useStyles();
 
   return (
@@ -38,15 +31,15 @@ function Product(props) {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={props.item.image}
+          image={props.image}
           title="Contemplative Reptile"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {props.item.title}
+            {props.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {props.item.description}
+            {props.description}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -54,13 +47,13 @@ function Product(props) {
         <Button
           variant="contained"
           color="primary"
-          onClick={productDetailHandler}
+          onClick={props.changeHistory}
         >
           Look Closer
         </Button>
       </CardActions>
     </Card>
   );
-}
+};
 
-export default Product;
+export default ProductUI;
