@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import ProductUI from "../Material-UI/ProductUI";
+import ProductUI from "../UI/MaterialUI/ProductUI";
 
 function Product(props) {
   const history = useHistory();

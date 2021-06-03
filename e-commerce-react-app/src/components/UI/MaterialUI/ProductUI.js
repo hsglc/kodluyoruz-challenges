@@ -9,10 +9,10 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   root: {
-    background: "rgb(136,64,86)",
+    background: "rgb(136,64,86) linear-gradient(133deg, rgba(136,64,86,1) 4%, rgba(195,157,130,1) 53%, rgba(178,168,193,1) 92%)",
 
-    background:
-      "linear-gradient(133deg, rgba(136,64,86,1) 4%, rgba(195,157,130,1) 53%, rgba(178,168,193,1) 92%)",
+   
+      
     border: 1,
     maxWidth: 400,
     margin: "1rem",
