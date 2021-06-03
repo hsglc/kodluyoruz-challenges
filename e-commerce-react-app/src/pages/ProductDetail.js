@@ -14,7 +14,7 @@ function ProductDetail() {
     history.push("/");
   };
 
-  const addItemToCartHandler = () => {
+  const addItemToCartHandler = (item) => {
     cartCtx.addItem(item);
   };
 
@@ -24,7 +24,8 @@ function ProductDetail() {
         `https://fakestoreapi.com/products${location.pathname}`
       );
       const data = await response.json();
-      setItem(data);
+      const modifiedItem = { ...data, amount: 1 };
+      setItem(modifiedItem);
     };
     fetchItem();
   }, [location]);
@@ -37,7 +38,18 @@ function ProductDetail() {
     padding: "3rem",
   };
 
-  return <div style={containerStyle}>{item && <ProductDetailUI item={item} image={item.image} backHome={backHomeHandler} addItem={addItemToCartHandler} />}</div>;
+  return (
+    <div style={containerStyle}>
+      {item && (
+        <ProductDetailUI
+          item={item}
+          image={item.image}
+          backHome={backHomeHandler}
+          addItem={addItemToCartHandler.bind(null, item)}
+        />
+      )}
+    </div>
+  );
 }
 
 export default ProductDetail;

@@ -6,6 +6,14 @@ function Cart() {
 
     const history = useHistory();
 
+    const cartStyle = {
+        'padding' : '1rem',
+        'color':'white',
+        'background':'black',
+        'borderRadius':'10px',
+        'fontSize' : '1.1rem',
+        'cursor':'pointer',
+    }
 
     const cartCtx = useContext(CartContext);
 
@@ -17,7 +25,7 @@ function Cart() {
     const numberOfCartItems = cartCtx.items.length;
 
     return (
-        <button onClick={goCheckoutHandler} >
+        <button onClick={goCheckoutHandler} style={cartStyle} >
             Cart ({numberOfCartItems})
         </button>
     )

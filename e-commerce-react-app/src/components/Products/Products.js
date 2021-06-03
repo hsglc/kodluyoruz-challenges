@@ -1,15 +1,13 @@
-
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Product from "./Product";
-import classes from './Products.module.css'
-
+import classes from "./Products.module.css";
 
 function Products() {
   const history = useHistory();
 
   const endpoint = history.location.pathname;
-  
+
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -20,20 +18,19 @@ function Products() {
       baseURL = `https://fakestoreapi.com/products`;
     }
 
-    
     const fetchProds = async () => {
       const response = await fetch(baseURL);
       const data = await response.json();
       setProducts(data);
     };
-
     fetchProds();
+    return () => {
+      setProducts([]);
+    };
   }, [endpoint]);
 
-  
-
   return (
-    <div className={classes.container} >
+    <div className={classes.container}>
       {products.map((item) => (
         <Product key={item.id} item={item} />
       ))}
