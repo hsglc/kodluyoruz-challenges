@@ -1,8 +1,8 @@
   .nav {
 
-    height: 5rem;
+    height: 4rem;
     display: flex;
-    padding: 0 10%;
+    
     justify-content: center;
     align-items: center;
     background: rgb(195, 208, 211);
@@ -19,14 +19,14 @@
   }
 
   .nav li {
-    margin-left: 1.5rem;
-    font-size: 1.3rem;
+    margin-left: 1rem;
+    font-size: 1.1rem;
   }
 
   .nav a {
     text-decoration: none;
     color: white;
-    padding: .5rem;
+    padding: .3rem;
     
   }
 
@@ -40,5 +40,5 @@
 
   .nav a.active {
     text-decoration: underline;
-    text-decoration-thickness: .4rem;
+    text-decoration-thickness: .3rem;
   }

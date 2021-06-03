@@ -1,0 +1,12 @@
+.container {
+    margin-top: 1rem;
+    display: flex;
+    background: rgb(54, 15, 26) linear-gradient(133deg, rgba(54, 15, 26, 1) 25%, rgba(36, 16, 36, 1) 56%, rgba(17, 2, 42, 1) 92%);
+    color: #FAEBD7;
+    padding: 1.5rem;
+    width: 50%;
+}
+
+.space{
+    margin:1rem;
+}
