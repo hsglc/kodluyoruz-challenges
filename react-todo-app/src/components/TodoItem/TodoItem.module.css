@@ -1,0 +1,17 @@
+.todo {
+    text-decoration: line-through;
+    opacity: 0.5;
+    color: blue;
+    font-size: .9rem;
+}
+
+
+.delete {
+    background-color: red;
+    color:white;
+}
+
+.complete{
+    background-color: green;
+    color:white;
+}

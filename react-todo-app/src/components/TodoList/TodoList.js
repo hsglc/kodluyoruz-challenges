@@ -6,22 +6,11 @@ function TodoList(props) {
   return (
     <div>
       <ul>
-        {props.todos.map((todo) => {
+        {props.todos.map((todo,index) => {
           return (
-            <>
-              <li
-                className={
-                  !todo.isCompleted ? "list-group-item" : "list-group-item line"
-                }
-                key={todo.id}
-                onClick={props.styleHandler.bind(null, todo.id)}
-              >
-                <TodoItem {...todo} key={todo.id} />
-              </li>
-              <button className="button" onClick={props.deleteHandler.bind(null, todo.id)}>
-                X
-              </button>
-            </>
+            <li className="list-group-item" key={todo.id}>
+              <TodoItem {...todo} key={todo.id} onDelete={props.onDelete} index={index} onComplete={props.onComplete} />
+            </li>
           );
         })}
       </ul>

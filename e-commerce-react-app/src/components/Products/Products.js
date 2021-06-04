@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import Product from "./Product";
+import Product from "./Product/Product";
 import classes from "./Products.module.css";
 
 function Products() {

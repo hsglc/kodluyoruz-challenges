@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import TodoList from "./components/TodoList/TodoList";
-import TodoHeader from "./Layouts/TodoHeader";
 import "./App.css";
 import Form from "./components/Form/Form";
 
@@ -11,7 +10,6 @@ class App extends Component {
       userInput: "",
       todos: [],
     };
-    this.deleteItemHandler = this.deleteItemHandler.bind(this);
   }
 
   // Eğer input alanı boş değilse todos'a ekleye
@@ -43,27 +41,6 @@ class App extends Component {
     }
   };
 
-  deleteItemHandler = (id) => {
-    console.log(id);
-    const newTodos = [...this.state.todos].filter((item) => item.id !== id);
-    console.log(newTodos);
-    console.log("deleteHandler");
-
-    this.setState({ todos: newTodos });
-  };
-
-  changeStyleHandler = (id) => {
-    const newTodos = [...this.state.todos];
-
-    for (const todo of newTodos) {
-      if (todo.id === id) {
-        todo.isCompleted = true;
-      }
-    }
-    this.setState({todos: newTodos})
-    console.log(newTodos);
-  };
-
   onInputChange = (e) => {
     const newVal = e.target.value;
     this.setState({
@@ -71,10 +48,20 @@ class App extends Component {
     });
   };
 
+  deleteItemFromListHandler = (id) => {
+    const newTodoList = [...this.state.todos].filter((item) => item.id !== id);
+    this.setState({ todos: newTodoList });
+  };
+
+  completeTodoHandler = (index) => {
+    const newTodos = [...this.state.todos];
+    newTodos[index].isCompleted = !newTodos[index].isCompleted;
+    this.setState({ todos: newTodos });
+  };
+
   render() {
     return (
       <div className="App">
-        <TodoHeader />
         <Form
           userInput={this.state.userInput}
           onInputChange={this.onInputChange}
@@ -84,8 +71,8 @@ class App extends Component {
           <div className="list">
             <TodoList
               todos={this.state.todos}
-              deleteHandler={this.deleteItemHandler}
-              styleHandler={this.changeStyleHandler}
+              onDelete={this.deleteItemFromListHandler}
+              onComplete={this.completeTodoHandler}
             />
           </div>
         )}
