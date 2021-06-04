@@ -13,7 +13,7 @@ import { red } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
+
 import Button from "@material-ui/core/Button";
 
 
@@ -21,13 +21,13 @@ import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 400,
+    maxWidth: 300,
     margin: "0 auto",
     height: "78vh",
   },
   media: {
-    height: 100,
-    paddingTop: "56.25%",
+    height: 80,
+    paddingTop: "50.25%",
   },
   expand: {
     transform: "rotate(0deg)",
@@ -57,11 +57,7 @@ const ProductDetailUI = (props) => {
   return (
     <Card className={classes.root}>
       <CardHeader
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
+        
         title="Sales Manager"
         subheader="Wednesday June, 2, 2021"
       />

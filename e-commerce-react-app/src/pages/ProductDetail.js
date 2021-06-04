@@ -35,7 +35,7 @@ function ProductDetail() {
       "rgb(136,64,86) linear-gradient(133deg, rgba(136,64,86,1) 4%, rgba(195,157,130,1) 53%, rgba(178,168,193,1) 92%)",
 
     margin: "0 auto",
-    padding: "3rem",
+    padding: "2rem",
   };
 
   return (

@@ -1,7 +1,7 @@
 import CartItem from "../components/Cart/CartItem";
 import { useContext } from "react";
 import CartContext from "../store/cart-context";
-import classes from './Checkout.module.css';
+import classes from './Result.module.css';
 
 function Checkout() {
 
@@ -18,7 +18,8 @@ function Checkout() {
       {cartCtx.items.map((item) => (
         <CartItem item={item} amount={item.amount}/>
       ))}
-      <div style={totalAmountStyle}>Total Amount : {`${cartCtx.totalAmount.toFixed(2)} $`}</div>
+      {cartCtx.items.length !== 0 && <div style={totalAmountStyle}>Total Amount : {`${cartCtx.totalAmount.toFixed(2)} $`}</div>}
+      {!cartCtx.items.length && <div>No item found in your cart!</div>}
     </div>
   );
 }

@@ -18,11 +18,11 @@ function Cart() {
     const cartCtx = useContext(CartContext);
 
     const goCheckoutHandler = () =>{
-        history.push("./checkout");
+        history.push("./result");
     }
 
 
-    const numberOfCartItems = cartCtx.items.length;
+    const numberOfCartItems = cartCtx.items.reduce((currNumber, item)=> currNumber + item.amount,0)
 
     return (
         <button onClick={goCheckoutHandler} style={cartStyle} >

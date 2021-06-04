@@ -35,6 +35,7 @@ function Nav() {
             Electronics
           </NavLink>{" "}
         </li>
+        
       </ul>
     </nav>
   );

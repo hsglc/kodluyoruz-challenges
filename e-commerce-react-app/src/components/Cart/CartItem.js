@@ -1,9 +1,12 @@
 import LocalShippingIcon from "@material-ui/icons/LocalShipping";
-import DeleteIcon from '@material-ui/icons/Delete';
+import RemoveIcon from '@material-ui/icons/Remove';
 import classes from './CartItem.module.css'
+import {useContext} from 'react';
+import CartContext from "../../store/cart-context";
 
 function CartItem(props) {
-
+  
+  const cartCtx = useContext(CartContext);
 
   const amountStyle = {
     'padding':'.4rem',
@@ -13,9 +16,11 @@ function CartItem(props) {
 
   }
 
-  const cartItemRemoveHandler = id => {}
+  const cartItemRemoveHandler = id => {
+    cartCtx.removeItem(id);
+  }
 
-
+ 
   return (
     <div className={classes.container}>
       <LocalShippingIcon className={classes.space}/>
@@ -26,7 +31,7 @@ function CartItem(props) {
       </div>
       
       <button className={classes.space} onClick={cartItemRemoveHandler.bind(null,props.item.id)} >
-          <DeleteIcon />
+          <RemoveIcon />
       </button>
     </div>
   );

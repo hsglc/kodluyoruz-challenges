@@ -3,7 +3,7 @@ import ProductDetail from "./pages/ProductDetail";
 
 import Home from "./pages/Home";
 import Header from "./layout/Header";
-import Checkout from "./pages/Checkout";
+import Result from "./pages/Result";
 
 function App() {
   return (
@@ -25,8 +25,8 @@ function App() {
         <Route path="/electronics">
           <Home />
         </Route>
-        <Route path="/checkout">
-          <Checkout />
+        <Route path="/result">
+          <Result />
         </Route>
         <Route path="/:id">
           <ProductDetail />
