@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   },
 });
 
-const ProductUI = (props) => {
+const ProductUI = ({image,title,description,changeHistory}) => {
   const classes = useStyles();
 
   return (
@@ -30,15 +30,15 @@ const ProductUI = (props) => {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={props.image}
+          image={image}
           title="Contemplative Reptile"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {props.title}
+            {title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {props.description}
+            {description}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -46,7 +46,7 @@ const ProductUI = (props) => {
         <Button
           variant="contained"
           color="primary"
-          onClick={props.changeHistory}
+          onClick={changeHistory}
         >
           Look Closer
         </Button>

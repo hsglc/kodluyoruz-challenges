@@ -1,18 +1,18 @@
 import { useHistory } from "react-router-dom";
 import ProductUI from "../../UI/MaterialUI/ProductUI";
 
-function Product(props) {
+function Product({item}) {
   const history = useHistory();
   const productDetailHandler = () => {
-    history.push(`/${props.item.id}`);
+    history.replace(`/${item.id}`);
   };
 
   return (
     <ProductUI
       changeHistory={productDetailHandler}
-      image={props.item.image}
-      title={props.item.title}
-      description={props.item.description}
+      image={item.image}
+      title={item.title}
+      description={item.description}
     />
   );
 }
