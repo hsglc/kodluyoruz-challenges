@@ -4,7 +4,7 @@ import classes from './CartItem.module.css'
 import {useContext} from 'react';
 import CartContext from "../../store/cart-context";
 
-function CartItem(props) {
+function CartItem({item}) {
   
   const cartCtx = useContext(CartContext);
 
@@ -25,12 +25,12 @@ function CartItem(props) {
     <div className={classes.container}>
       <LocalShippingIcon className={classes.space}/>
       <div>
-        <p>{props.item.title}</p>
-        <p>{`${props.item.price} $`}</p>
-        <span style={amountStyle} >x {props.item.amount}</span>
+        <p>{item.title}</p>
+        <p>{`${item.price} $`}</p>
+        <span style={amountStyle} >x {item.amount}</span>
       </div>
       
-      <button className={classes.space} onClick={cartItemRemoveHandler.bind(null,props.item.id)} >
+      <button className={classes.space} onClick={cartItemRemoveHandler.bind(null,item.id)} >
           <RemoveIcon />
       </button>
     </div>
