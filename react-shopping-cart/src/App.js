@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import { products } from "./constants";
 import ProductsGrid from "./components/ProductsGrid";
 
-const App = (props) => {
+const App = () => {
   const [totalItemCount, setTotalItemCount] = useState(0);
 
   const [shoppingCart, setShoppingCart] = useState([

@@ -27,7 +27,7 @@ const ProductCard = ({ product, onIncrement, onDecrement, cartItem }) => {
                     variant="danger"
                     size="lg"
                     onClick={() => onDecrement(cartItem)}
-                    style={{ "margin-top": "auto" }}
+                    style={{ marginTop: "auto" }}
                   >
                     <MinusCircleIcon />
                   </Button>
