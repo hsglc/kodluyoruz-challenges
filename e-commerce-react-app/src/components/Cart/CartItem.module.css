@@ -3,8 +3,10 @@
     display: flex;
     background: rgb(54, 15, 26) linear-gradient(133deg, rgba(54, 15, 26, 1) 25%, rgba(36, 16, 36, 1) 56%, rgba(17, 2, 42, 1) 92%);
     color: #FAEBD7;
-    padding: 1.5rem;
-    width: 60%;
+    padding: 1.2rem;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .space{

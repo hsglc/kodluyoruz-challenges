@@ -1,25 +1,39 @@
 import CartItem from "../components/Cart/CartItem";
 import { useContext } from "react";
 import CartContext from "../store/cart-context";
-import classes from './Result.module.css';
+import classes from "./Result.module.css";
 
 function Checkout() {
-
   const totalAmountStyle = {
-    'background' : 'yellow',
-    'margin':'1rem',
-    'padding': '1rem',
-  }
+    background: "yellow",
+    margin: "1rem",
+    padding: "1rem",
+  };
   const cartCtx = useContext(CartContext);
 
   return (
-    <div className={classes.container} >
-      
+    <div className={classes.container}>
       {cartCtx.items.map((item) => (
-        <CartItem item={item} amount={item.amount}/>
+        <CartItem item={item} amount={item.amount} />
       ))}
-      {cartCtx.items.length !== 0 && <div style={totalAmountStyle}>Total Amount : {`${cartCtx.totalAmount.toFixed(2)} $`}</div>}
-      {!cartCtx.items.length && <div>No item found in your cart!</div>}
+      {cartCtx.items.length !== 0 && (
+        <div style={totalAmountStyle}>
+          Total Amount : {`${cartCtx.totalAmount.toFixed(2)} $`}
+        </div>
+      )}
+      {!cartCtx.items.length && (
+        <div
+          style={{
+            background: "green",
+            padding: "1rem",
+            color: "white",
+            fontSize: "1.5rem",
+            marginTop: "1rem",
+          }}
+        >
+          No item found in your cart!
+        </div>
+      )}
     </div>
   );
 }
