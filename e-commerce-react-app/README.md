@@ -1,7 +1,7 @@
 
 ## Demo
 
-[Live](https://reactshoppingcartbasic.netlify.app)
+[Live](https://shoppingappwithreact.netlify.app)
 
   
 # React Shopping 
