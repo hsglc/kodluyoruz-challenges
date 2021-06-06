@@ -2,7 +2,7 @@ import { useLocation, useHistory } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 
 import CartContext from "../store/cart-context";
-import ProductDetailUI from "../components/UI/MaterialUI/ProductDetailUI";
+import ProductDetailUI from "../components/UI/ProductDetailUI";
 
 function ProductDetail() {
   const location = useLocation();
