@@ -1,8 +1,11 @@
 import { useHistory } from "react-router-dom";
 import ProductUI from "../../UI/ProductUI";
 
-function Product({item}) {
+function Product({ item }) {
+
+
   const history = useHistory();
+  
   const productDetailHandler = () => {
     history.replace(`/${item.id}`);
   };
@@ -12,7 +15,6 @@ function Product({item}) {
       changeHistory={productDetailHandler}
       image={item.image}
       title={item.title}
-      description={item.description}
     />
   );
 }

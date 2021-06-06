@@ -10,7 +10,8 @@ function ProductDetail() {
   const [item, setItem] = useState();
   const cartCtx = useContext(CartContext);
 
-  const backHomeHandler = () => {
+  const backToHomeHandler = () => {
+    
     history.push("/");
   };
 
@@ -44,7 +45,7 @@ function ProductDetail() {
         <ProductDetailUI
           item={item}
           image={item.image}
-          backHome={backHomeHandler}
+          backToHome={backToHomeHandler}
           addItem={addItemToCartHandler.bind(null, item)}
         />
       )}

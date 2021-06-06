@@ -13,12 +13,14 @@ const useStyles = makeStyles({
       "rgb(136,64,86) linear-gradient(133deg, rgba(136,64,86,1) 4%, rgba(195,157,130,1) 53%, rgba(178,168,193,1) 92%)",
 
     border: 1,
-    maxWidth: 400,
-    margin: "1rem",
-    padding: "1rem",
+    width: 280,
+    height: 460,
+    margin: ".6rem",
+    padding: ".5rem",
   },
   media: {
-    height: 340,
+    height: 180,
+    width: 280,
   },
 });
 
@@ -47,8 +49,11 @@ const ProductUI = ({image,title,description,changeHistory}) => {
           variant="contained"
           color="primary"
           onClick={changeHistory}
+          style= {{
+            margin:".2rem auto",
+          }}
         >
-          Look Closer
+          View
         </Button>
       </CardActions>
     </Card>

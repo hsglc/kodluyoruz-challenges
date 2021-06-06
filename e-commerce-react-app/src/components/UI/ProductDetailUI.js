@@ -16,14 +16,12 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import Button from "@material-ui/core/Button";
 
-
 import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 300,
     margin: "0 auto",
-    height: "78vh",
   },
   media: {
     height: 80,
@@ -44,38 +42,34 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ProductDetailUI = (props) => {
+const ProductDetailUI = ({ item, backToHome, addItem }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
+
+  const { title, description, image } = item;
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
-  
-
   return (
     <Card className={classes.root}>
-      <CardHeader
-        
-        title="Sales Manager"
-        subheader="Wednesday June, 2, 2021"
-      />
-      <CardMedia className={classes.media} image={props.item.image} />
+      <CardHeader title="Sales Manager" subheader="Wednesday June, 2, 2021" />
+      <CardMedia className={classes.media} image={image} />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          {props.item.title}
+          {title}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton aria-label="add to favorites" >
           <FavoriteIcon />
         </IconButton>
-        <Button color="primary" onClick={props.addItem.bind(props.item)}>
+        <Button color="primary" onClick={addItem.bind(item)}>
           Add to cart
         </Button>
 
-        <Button color="secondary" onClick={props.backHome}>
+        <Button color="secondary" onClick={backToHome}>
           Back to home
         </Button>
         <IconButton
@@ -94,7 +88,7 @@ const ProductDetailUI = (props) => {
         <CardContent>
           <Typography paragraph>Description:</Typography>
 
-          <Typography paragraph>{props.item.description}</Typography>
+          <Typography paragraph>{description}</Typography>
         </CardContent>
       </Collapse>
     </Card>
