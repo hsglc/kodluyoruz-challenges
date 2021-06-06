@@ -1,26 +1,14 @@
 import { useRef, useState } from "react";
-import Result from "./Result";
+import Result from "../../pages/Result/Result";
 import classes from "./Form.module.css";
+import FormButton from "../Buttons/FormButton";
 
-import styled from "styled-components";
-
-function Home() {
+function Form() {
   const weightInputRef = useRef();
   const heightInputRef = useRef();
 
   const [showResult, setShowResult] = useState(false);
   const [showBmi, setShowBmi] = useState(true);
-
-  const Button = styled.button`
-    font-size: 1em;
-    margin: 3rem;
-    padding: 0.25em 1em;
-    border-radius: 7px;
-
-    /* Color the border and text with theme.main */
-    color: ${(props) => props.theme.main};
-    border: 2px solid ${(props) => props.theme.main};
-  `;
 
   const calculateHandler = (e) => {
     e.preventDefault();
@@ -34,25 +22,25 @@ function Home() {
         <div className={classes.form}>
           <h1>Adult BMI Calculator</h1>
           <form>
-            <label htmlFor="height">
+            <label>
               HEIGHT
               <input
                 ref={heightInputRef}
-                name="height"
-                type="text"
+                type="number"
                 placeholder="with centimeters"
-              ></input>
+              />
             </label>
-            <label htmlFor="weight">
+            <label>
               WEIGHT
               <input
                 ref={weightInputRef}
-                name="weight"
-                type="text"
+                type="number"
                 placeholder="with kilograms"
-              ></input>
+              />
             </label>
-            <Button onClick={calculateHandler}>Compute BMI</Button>
+            <FormButton onClick={calculateHandler} name="Calculate">
+              Compute BMI
+            </FormButton>
           </form>
         </div>
       )}
@@ -66,4 +54,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Form;
