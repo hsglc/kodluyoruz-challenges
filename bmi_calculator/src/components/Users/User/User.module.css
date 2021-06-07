@@ -2,16 +2,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: black;
+    background: rgb(135, 149, 88) linear-gradient(133deg, rgba(135, 149, 88, 1) 25%, rgba(121, 158, 66, 1) 56%, rgba(130, 100, 61, 1) 92%);
     width: 50%;
-    color: white;
+    color: #5b2551;
     margin: .5rem;
     border-radius: .5rem;
     padding: .3rem;
     cursor: pointer;
 }
 
-.user_container:hover{
-    opacity: 0.5;
+.user_container:hover {
+    opacity: 0.8;
+    color: black;
 }
-

@@ -21,11 +21,11 @@ function Form() {
   return (
     <>
       {showCalculator && (
-        <div className={classes.form}>
+        <div className={classes.container}>
           <h1>Adult BMI Calculator</h1>
-          <form onSubmit={calculateHandler}>
+          <form onSubmit={calculateHandler} className={classes.form}>
             <label>
-              Name
+              NAME
               <input ref={nameInputRef} type="text" placeholder="your name" />
             </label>
             <label>
