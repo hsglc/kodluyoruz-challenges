@@ -1,7 +1,7 @@
 import Form from "./components/InputForm/Form";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Bmi from "./pages/Bmi/Bmi";
+import Bmi from "./pages/Bmi";
 import Layout from "./components/Layout/Layout";
 
 function App() {

@@ -1,23 +1,17 @@
 import classes from "./Result.module.css";
 import { useHistory } from "react-router-dom";
-import styled from "styled-components";
+import FormButton from "../Buttons/FormButton";
 
 function Result({ height, weight }) {
-  const Button = styled.button`
-    font-size: 0.8em;
-    margin: 3rem;
-    padding: 0.4em 1em;
-    border-radius: 7px;
-  `;
-
   const bmi = (weight / (((height / 100) * height) / 100)).toFixed(1);
   const history = useHistory();
+
   const addtoStorageHandler = () => {
     localStorage.setItem("bmi", bmi);
   };
 
   const changeLocationHandler = () => {
-    history.push("/bmi");
+    history.push("/what's-bmi");
   };
 
   return (
@@ -26,7 +20,9 @@ function Result({ height, weight }) {
         <p>For the information you entered:</p>
         <p>Height: {height} centimeters</p>
         <p>Weight: {weight} kilograms</p>
-        <p>Your BMI is <span className={classes.bmi} >{bmi}</span></p>
+        <p>
+          Your BMI is <span className={classes.bmi}>{bmi}</span>
+        </p>
       </div>
       <div>
         <table className={classes.table}>
@@ -53,8 +49,8 @@ function Result({ height, weight }) {
         </table>
       </div>
       <div className={classes.buttons}>
-        <Button onClick={addtoStorageHandler}>Add to Local Storage</Button>
-        <Button onClick={changeLocationHandler}>What's BMI?</Button>
+        <FormButton actionHandler={addtoStorageHandler} name="Add to Local Storage" />
+        <FormButton actionHandler={changeLocationHandler} name={"What's BMI?"} />
       </div>
     </div>
   );

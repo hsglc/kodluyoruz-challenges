@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-function FormButton({name}) {
+function FormButton({name, actionHandler}) {
   const Button = styled.button`
     font-size: 1em;
     margin: 3rem;
@@ -11,7 +11,7 @@ function FormButton({name}) {
     
   `;
 
-  return <Button >{name}</Button>;
+  return <Button onClick={actionHandler} >{name}</Button>;
 }
 
 export default FormButton;

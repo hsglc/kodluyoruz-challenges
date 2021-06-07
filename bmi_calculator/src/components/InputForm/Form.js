@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import Result from "../../pages/Result/Result";
+import Result from "../Result/Result";
 import classes from "./Form.module.css";
 import FormButton from "../Buttons/FormButton";
 
@@ -8,20 +8,21 @@ function Form() {
   const heightInputRef = useRef();
 
   const [showResult, setShowResult] = useState(false);
-  const [showBmi, setShowBmi] = useState(true);
+  const [showCalculator, setShowCalculator] = useState(true);
 
   const calculateHandler = (e) => {
     e.preventDefault();
 
     setShowResult(true);
-    setShowBmi(false);
+    setShowCalculator(false);
   };
+
   return (
     <>
-      {showBmi && (
+      {showCalculator && (
         <div className={classes.form}>
           <h1>Adult BMI Calculator</h1>
-          <form>
+          <form onSubmit={calculateHandler}>
             <label>
               HEIGHT
               <input
@@ -38,9 +39,7 @@ function Form() {
                 placeholder="with kilograms"
               />
             </label>
-            <FormButton onClick={calculateHandler} name="Calculate">
-              Compute BMI
-            </FormButton>
+            <FormButton name="Calculate">Compute BMI</FormButton>
           </form>
         </div>
       )}

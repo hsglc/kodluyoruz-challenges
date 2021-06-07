@@ -5,7 +5,7 @@ function Header() {
   return (
     <header>
       <nav className={classes.nav}>
-        <ul>
+        <ul className={classes.flex}>
           <li>
             <NavLink
               to="/"

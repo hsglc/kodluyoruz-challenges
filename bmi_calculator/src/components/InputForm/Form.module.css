@@ -22,6 +22,11 @@ input {
     padding: .4rem;
     border-radius: .2rem;
     border: none;
+    outline: none;
+}
+
+input:focus{
+    border: 3px solid rgb(186, 199, 188);
 }
 
 form {
