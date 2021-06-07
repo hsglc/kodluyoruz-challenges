@@ -10,13 +10,13 @@ const Detail = () => {
 
 
   const params = useParams();
-  console.log(params);
+  const id = params.id;
 
   // React Router'daki dinamik URL kısmını almalıyız (useParams)
   const { showDetail, selectedMovie } = useContext(MovieContext);
   useEffect(() => {
-    showDetail(params.id); // useParams ile alınan film id'sini kullanınız. 
-  }, []);
+    showDetail(id); // useParams ile alınan film id'sini kullanınız. 
+  }, [id, showDetail]);
 
   return (
     <div className='detail-container'>
