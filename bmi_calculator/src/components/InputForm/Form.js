@@ -13,7 +13,7 @@ function Form() {
 
   const calculateHandler = (e) => {
     e.preventDefault();
-
+    
     setShowResult(true);
     setShowCalculator(false);
   };
