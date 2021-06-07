@@ -1,14 +1,30 @@
 import classes from "./Result.module.css";
 import { useHistory } from "react-router-dom";
 import FormButton from "../Buttons/FormButton";
+import { useState, useEffect } from "react";
 
-function Result({ height, weight }) {
+function Result({ height, weight, name }) {
   const bmi = (weight / (((height / 100) * height) / 100)).toFixed(1);
+
+  const [showUsers, setShowUsers] = useState([]);
+
+  const [users, setUsers] = useState([]);
+
+  const [showResult, setShowResult] = useState(true);
+
   const history = useHistory();
 
   const addtoStorageHandler = () => {
-    localStorage.setItem("bmi", bmi);
+    const fetchedUsers = JSON.parse(localStorage.getItem("users"));
+    fetchedUsers.push({ name, bmi });
+    setUsers(fetchedUsers);
+    localStorage.setItem("users", JSON.stringify(fetchedUsers));
   };
+
+  useEffect(() => {
+    const fetchedUsers = JSON.parse(localStorage.getItem("users") || []);
+    setUsers(fetchedUsers);
+  }, []);
 
   const changeLocationHandler = () => {
     history.push("/what's-bmi");
@@ -49,8 +65,14 @@ function Result({ height, weight }) {
         </table>
       </div>
       <div className={classes.buttons}>
-        <FormButton actionHandler={addtoStorageHandler} name="Add to Local Storage" />
-        <FormButton actionHandler={changeLocationHandler} name={"What's BMI?"} />
+        <FormButton
+          actionHandler={addtoStorageHandler}
+          name="Add to Local Storage"
+        />
+        <FormButton
+          actionHandler={changeLocationHandler}
+          name={"What's BMI?"}
+        />
       </div>
     </div>
   );

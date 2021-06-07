@@ -6,6 +6,7 @@ import FormButton from "../Buttons/FormButton";
 function Form() {
   const weightInputRef = useRef();
   const heightInputRef = useRef();
+  const nameInputRef = useRef();
 
   const [showResult, setShowResult] = useState(false);
   const [showCalculator, setShowCalculator] = useState(true);
@@ -23,6 +24,10 @@ function Form() {
         <div className={classes.form}>
           <h1>Adult BMI Calculator</h1>
           <form onSubmit={calculateHandler}>
+            <label>
+              Name
+              <input ref={nameInputRef} type="text" placeholder="your name" />
+            </label>
             <label>
               HEIGHT
               <input
@@ -47,6 +52,7 @@ function Form() {
         <Result
           height={heightInputRef.current.value}
           weight={weightInputRef.current.value}
+          name={nameInputRef.current.value}
         />
       )}
     </>
