@@ -29,10 +29,11 @@ function CartItem({ item }) {
         <p>{item.title}</p>
         <p>{`${item.price} $`}</p>
       </div>
-      <div>
-        <span style={amountStyle}>x {item.amount}</span>
-      </div>
-      <div>
+
+      <div className={classes.buttons}>
+        <div className={classes.space}>
+          <p style={amountStyle}>x {item.amount}</p>
+        </div>
         <button
           className={classes.space}
           onClick={cartItemRemoveHandler.bind(null, item.id)}
