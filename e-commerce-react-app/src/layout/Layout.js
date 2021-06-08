@@ -1,12 +1,10 @@
-import Header from "./Header";
+import Header from "./Header/Header";
 
 function Layout(props) {
   return (
     <>
-      <Header></Header>
-      <main>
-          {props.children}
-      </main>
+      <Header />
+      <main>{props.children}</main>
     </>
   );
 }

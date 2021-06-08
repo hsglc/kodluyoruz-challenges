@@ -17,6 +17,9 @@ const useStyles = makeStyles({
     height: 460,
     margin: ".6rem",
     padding: ".5rem",
+    display: "flex",
+    flexDirection:"column",
+    justifyContent: "space-between"
   },
   media: {
     height: 180,

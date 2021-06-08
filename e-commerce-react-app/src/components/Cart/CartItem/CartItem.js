@@ -1,7 +1,9 @@
 import RemoveIcon from "@material-ui/icons/Remove";
+import AddIcon from "@material-ui/icons/Add";
+
 import classes from "./CartItem.module.css";
 import { useContext } from "react";
-import CartContext from "../../store/cart-context";
+import CartContext from "../../../store/cart-context";
 
 function CartItem({ item }) {
   const cartCtx = useContext(CartContext);
@@ -17,6 +19,10 @@ function CartItem({ item }) {
     cartCtx.removeItem(id);
   };
 
+  const cartItemAddHandler = (id) => {
+    cartCtx.addItem(item);
+  };
+
   return (
     <div className={classes.container}>
       <div>
@@ -26,12 +32,20 @@ function CartItem({ item }) {
       <div>
         <span style={amountStyle}>x {item.amount}</span>
       </div>
-      <button
-        className={classes.space}
-        onClick={cartItemRemoveHandler.bind(null, item.id)}
-      >
-        <RemoveIcon />
-      </button>
+      <div>
+        <button
+          className={classes.space}
+          onClick={cartItemRemoveHandler.bind(null, item.id)}
+        >
+          <RemoveIcon />
+        </button>
+        <button
+          className={classes.space}
+          onClick={cartItemAddHandler.bind(null, item.id)}
+        >
+          <AddIcon />
+        </button>
+      </div>
     </div>
   );
 }

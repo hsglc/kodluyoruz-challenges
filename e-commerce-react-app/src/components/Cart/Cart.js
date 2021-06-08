@@ -1,34 +1,28 @@
-import {useContext} from 'react';
-import CartContext from '../../store/cart-context';
-import {useHistory} from 'react-router-dom';
+import { useContext } from "react";
+import CartContext from "../../store/cart-context";
+import { useHistory } from "react-router-dom";
+
+import classes from "./Cart.module.css";
 
 function Cart() {
+  const history = useHistory();
 
-    const history = useHistory();
+  const cartCtx = useContext(CartContext);
 
-    const cartStyle = {
-        'padding' : '1rem',
-        'color':'white',
-        'background':'black',
-        'borderRadius':'10px',
-        'fontSize' : '1.1rem',
-        'cursor':'pointer',
-    }
+  const goCheckoutHandler = () => {
+    history.push("./result");
+  };
 
-    const cartCtx = useContext(CartContext);
+  const numberOfCartItems = cartCtx.items.reduce(
+    (currNumber, item) => currNumber + item.amount,
+    0
+  );
 
-    const goCheckoutHandler = () =>{
-        history.push("./result");
-    }
-
-
-    const numberOfCartItems = cartCtx.items.reduce((currNumber, item)=> currNumber + item.amount,0)
-
-    return (
-        <button onClick={goCheckoutHandler} style={cartStyle} >
-            Cart ({numberOfCartItems})
-        </button>
-    )
+  return (
+    <button onClick={goCheckoutHandler} className={classes.cart}>
+      Cart ({numberOfCartItems})
+    </button>
+  );
 }
 
-export default Cart
+export default Cart;
