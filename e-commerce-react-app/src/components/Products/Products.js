@@ -15,7 +15,7 @@ function Products() {
     if (endpoint === "/men" || endpoint === "/women") {
       baseURL = `https://fakestoreapi.com/products/category${endpoint}'s clothing`;
     } else if (endpoint === "/") {
-      baseURL = `https://fakestoreapi.com/products`;
+      baseURL = `https://fakestoreapi.com/products/category/electronics`;
     }
 
     const fetchProds = async () => {

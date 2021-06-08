@@ -6,7 +6,6 @@ import Home from "./pages/Home";
 import Result from "./pages/Result";
 import Layout from "./layout/Layout";
 
-
 function App() {
   return (
     <Router>
@@ -24,9 +23,7 @@ function App() {
           <Route path="/jewelery">
             <Home />
           </Route>
-          <Route path="/electronics">
-            <Home />
-          </Route>
+
           <Route path="/result">
             <Result />
           </Route>

@@ -8,7 +8,7 @@ function Nav() {
         <li>
           {" "}
           <NavLink to="/" activeClassName={classes.active} exact>
-            All Stars
+            Electronics
           </NavLink>{" "}
         </li>
         <li>
@@ -29,14 +29,6 @@ function Nav() {
             Jeweleries
           </NavLink>{" "}
         </li>
-        <li>
-          {" "}
-          <NavLink to="/electronics" activeClassName={classes.active}>
-            Electronics
-          </NavLink>{" "}
-        </li>
-        
-        
       </ul>
     </nav>
   );
