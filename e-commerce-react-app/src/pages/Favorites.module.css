@@ -1,0 +1,13 @@
+.container {
+    
+}
+
+.not_founded{
+    width: 50%;
+    font-weight: bold;
+    padding: 1rem;
+    margin: 1.5rem auto;
+    text-align: center;
+    background: yellowgreen;
+    color: black;
+}

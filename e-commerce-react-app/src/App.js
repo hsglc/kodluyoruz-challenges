@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 
 import Result from "./pages/Result";
 import Layout from "./layout/Layout";
+import Favorites from "./pages/Favorites";
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/favorites">
+            <Favorites />
           </Route>
           <Route path="/women">
             <Home />

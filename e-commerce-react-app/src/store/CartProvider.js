@@ -61,13 +61,26 @@ const cartReducer = (state, action) => {
     };
   }
   if (action.type === "ADD_FAVORITE") {
-    const updatedTotalAmount = state.totalAmount;
+    
+    const existingCartItemIndex = state.items.findIndex(
+      (item) => item.id === action.id
+    );
+
+    const existingCartItem = state.items[existingCartItemIndex];
 
     let updatedItems;
 
+    const updatedItem = {
+      ...existingCartItem,
+      isFavorite: !existingCartItem.isFavorite,
+    };
+    updatedItems = [...state.items];
+    updatedItems[existingCartItemIndex] = updatedItem;
+
+
     return {
       items: updatedItems,
-      totalAmount: updatedTotalAmount,
+      totalAmount: state.totalAmount,
     };
   }
 
@@ -88,8 +101,8 @@ const CartProvider = (props) => {
     dispatchCartAction({ type: "REMOVE", id });
   };
 
-  const addItemToFavoriteHandler = (item) => {
-    dispatchCartAction({ type: "ADD_FAVORITE", item });
+  const addItemToFavoriteHandler = (id) => {
+    dispatchCartAction({ type: "ADD_FAVORITE", id });
   };
 
   const cartContext = {

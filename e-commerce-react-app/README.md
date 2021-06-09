@@ -1,7 +1,7 @@
 
 ## Demo
 
-[Live](https://adoring-brown-c9f6f6.netlify.app  )
+[Live](https://adoring-brown-c9f6f6.netlify.app)
 
   
 # React Shopping 

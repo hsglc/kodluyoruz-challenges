@@ -29,6 +29,12 @@ function Nav() {
             Jeweleries
           </NavLink>{" "}
         </li>
+        <li>
+          {" "}
+          <NavLink to="/favorites" activeClassName={classes.active}>
+            Favorites
+          </NavLink>{" "}
+        </li>
       </ul>
     </nav>
   );

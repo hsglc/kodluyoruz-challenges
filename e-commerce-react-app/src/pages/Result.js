@@ -3,8 +3,6 @@ import { useContext } from "react";
 import CartContext from "../store/cart-context";
 import classes from "./Result.module.css";
 
-
-
 function Checkout() {
   const totalAmountStyle = {
     background: "yellow",
@@ -14,13 +12,10 @@ function Checkout() {
 
   const cartCtx = useContext(CartContext);
 
-  
-  
-
   return (
     <div className={classes.container}>
       {cartCtx.items.map((item) => (
-        <CartItem key={item.id} item={item} amount={item.amount} />
+        <CartItem key={item.id} item={item} />
       ))}
       {cartCtx.items.length !== 0 && (
         <div style={totalAmountStyle}>
