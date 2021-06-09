@@ -4,13 +4,13 @@ import { useReducer } from "react";
 
 const defaultCartState = {
   items: [],
+
   totalAmount: 0,
 };
 
 const cartReducer = (state, action) => {
   if (action.type === "ADD") {
-    const updatedTotalAmount =
-      state.totalAmount + action.item.price;
+    const updatedTotalAmount = state.totalAmount + action.item.price;
 
     const existingCartItemIndex = state.items.findIndex(
       (item) => item.id === action.item.id
@@ -60,8 +60,16 @@ const cartReducer = (state, action) => {
       totalAmount: updatedTotalAmount,
     };
   }
+  if (action.type === "ADD_FAVORITE") {
+    const updatedTotalAmount = state.totalAmount;
 
-  
+    let updatedItems;
+
+    return {
+      items: updatedItems,
+      totalAmount: updatedTotalAmount,
+    };
+  }
 
   return defaultCartState;
 };
@@ -80,15 +88,16 @@ const CartProvider = (props) => {
     dispatchCartAction({ type: "REMOVE", id });
   };
 
-  
+  const addItemToFavoriteHandler = (item) => {
+    dispatchCartAction({ type: "ADD_FAVORITE", item });
+  };
 
   const cartContext = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
-    
-    
+    addFavorite: addItemToFavoriteHandler,
   };
 
   return (

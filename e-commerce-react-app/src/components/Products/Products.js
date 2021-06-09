@@ -21,20 +21,20 @@ function Products() {
     const fetchProds = async () => {
       const response = await fetch(baseURL);
       const data = await response.json();
-      setProducts(data);
+      const updatedData = data.map((item) => {
+        const updateItem = { ...item, isFavorite: false };
+        return updateItem;
+      });
+      setProducts(updatedData);
     };
     fetchProds();
-    return () => {
-      setProducts([]);
-    };
   }, [endpoint]);
 
   return (
     <div className={classes.container}>
-      {products.map((item) => {
-        item.isFavorite = false;
-        return <Product key={item.id} item={item} />;
-      })}
+      {products.map((item) => (
+        <Product key={item.id} item={item} />
+      ))}
     </div>
   );
 }

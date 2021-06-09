@@ -6,9 +6,14 @@ import ProductDetailUI from "../components/UI/ProductDetailUI";
 
 function ProductDetail() {
   const location = useLocation();
+
   const history = useHistory();
-  const [item, setItem] = useState();
+
   const cartCtx = useContext(CartContext);
+
+  const [item, setItem] = useState();
+
+  
 
   const backToHomeHandler = () => {
     history.push("/");
@@ -18,7 +23,7 @@ function ProductDetail() {
     cartCtx.addItem(item);
   };
 
- 
+  
 
   useEffect(() => {
     const fetchItem = async () => {
@@ -26,7 +31,7 @@ function ProductDetail() {
         `https://fakestoreapi.com/products${location.pathname}`
       );
       const data = await response.json();
-      const modifiedItem = { ...data, amount: 1 };
+      const modifiedItem = { ...data, amount: 1, isFavorite: false };
       setItem(modifiedItem);
     };
     fetchItem();
@@ -44,7 +49,6 @@ function ProductDetail() {
     <div style={containerStyle}>
       {item && (
         <ProductDetailUI
-          
           item={item}
           image={item.image}
           backToHome={backToHomeHandler}

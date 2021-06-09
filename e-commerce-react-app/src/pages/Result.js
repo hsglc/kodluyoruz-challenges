@@ -3,13 +3,19 @@ import { useContext } from "react";
 import CartContext from "../store/cart-context";
 import classes from "./Result.module.css";
 
+
+
 function Checkout() {
   const totalAmountStyle = {
     background: "yellow",
     margin: "1rem",
     padding: "1rem",
   };
+
   const cartCtx = useContext(CartContext);
+
+  
+  
 
   return (
     <div className={classes.container}>

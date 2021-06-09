@@ -11,11 +11,25 @@
     ;
 }
 
-.space {
-    margin: 1rem;
-}
+
 
 .buttons {
     display: flex;
     align-items: center;
+    
 }
+.space {
+    margin: 1rem;
+    cursor: pointer;
+    border: none;
+    background: gray;
+    color: #fff;
+    border-radius: .4rem;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+button.space:hover {
+    opacity: 1;
+}
+

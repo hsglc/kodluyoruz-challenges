@@ -12,7 +12,7 @@ function Cart() {
   const goCheckoutHandler = () => {
     history.push("./result");
   };
-
+  
   const numberOfCartItems = cartCtx.items.reduce(
     (currNumber, item) => currNumber + item.amount,
     0

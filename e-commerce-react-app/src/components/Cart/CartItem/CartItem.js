@@ -2,11 +2,18 @@ import RemoveIcon from "@material-ui/icons/Remove";
 import AddIcon from "@material-ui/icons/Add";
 
 import classes from "./CartItem.module.css";
-import { useContext } from "react";
+import { useContext, useRef, useState } from "react";
 import CartContext from "../../../store/cart-context";
+
+import IconButton from "@material-ui/core/IconButton";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 
 function CartItem({ item }) {
   const cartCtx = useContext(CartContext);
+
+  const favoriteButton = useRef();
+
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const amountStyle = {
     padding: ".4rem",
@@ -23,6 +30,18 @@ function CartItem({ item }) {
     cartCtx.addItem(item);
   };
 
+  const addItemToFavoriteHandler = () => {
+    if (!isFavorite) {
+      console.log("added");
+      setIsFavorite(true);
+      favoriteButton.current.style.color = "red";
+    } else {
+      console.log("removed");
+      setIsFavorite(false);
+      favoriteButton.current.style.color = "gray";
+    }
+  };
+
   return (
     <div className={classes.container}>
       <div>
@@ -31,7 +50,15 @@ function CartItem({ item }) {
       </div>
 
       <div className={classes.buttons}>
-        <div className={classes.space}>
+        <IconButton
+          aria-label="add to favorites"
+          ref={favoriteButton}
+          onClick={addItemToFavoriteHandler}
+        >
+          <FavoriteIcon />
+        </IconButton>
+
+        <div>
           <p style={amountStyle}>x {item.amount}</p>
         </div>
         <button
