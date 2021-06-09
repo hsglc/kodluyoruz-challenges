@@ -5,7 +5,7 @@ function Product({ item }) {
 
 
   const history = useHistory();
-  
+  item.isFavorite = false;
   const productDetailHandler = () => {
     history.replace(`/${item.id}`);
   };

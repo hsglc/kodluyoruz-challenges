@@ -42,6 +42,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const iconButton = {
+  color: "red",
+};
+
 const ProductDetailUI = ({ item, backToHome, addItem }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
@@ -62,7 +66,7 @@ const ProductDetailUI = ({ item, backToHome, addItem }) => {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites" >
+        <IconButton aria-label="add to favorites" style={iconButton}>
           <FavoriteIcon />
         </IconButton>
         <Button color="primary" onClick={addItem.bind(item)}>

@@ -14,7 +14,7 @@ function Checkout() {
   return (
     <div className={classes.container}>
       {cartCtx.items.map((item) => (
-        <CartItem item={item} amount={item.amount} />
+        <CartItem key={item.id} item={item} amount={item.amount} />
       ))}
       {cartCtx.items.length !== 0 && (
         <div style={totalAmountStyle}>
