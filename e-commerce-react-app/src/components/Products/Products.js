@@ -31,9 +31,10 @@ function Products() {
 
   return (
     <div className={classes.container}>
-      {products.map((item) => (
-        <Product key={item.id} item={item} />
-      ))}
+      {products.map((item) => {
+        item.isFavorite = false;
+        return <Product key={item.id} item={item} />;
+      })}
     </div>
   );
 }

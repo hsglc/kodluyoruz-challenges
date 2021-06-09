@@ -11,13 +11,14 @@ function ProductDetail() {
   const cartCtx = useContext(CartContext);
 
   const backToHomeHandler = () => {
-    
     history.push("/");
   };
 
   const addItemToCartHandler = (item) => {
     cartCtx.addItem(item);
   };
+
+ 
 
   useEffect(() => {
     const fetchItem = async () => {
@@ -43,6 +44,7 @@ function ProductDetail() {
     <div style={containerStyle}>
       {item && (
         <ProductDetailUI
+          
           item={item}
           image={item.image}
           backToHome={backToHomeHandler}

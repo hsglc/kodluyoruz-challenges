@@ -16,7 +16,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import Button from "@material-ui/core/Button";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,18 +42,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const iconButton = {
-  color: "red",
-};
-
 const ProductDetailUI = ({ item, backToHome, addItem }) => {
   const classes = useStyles();
+
   const [expanded, setExpanded] = useState(false);
+
+  const [isFavorited, setIsFavorited] = useState(false);
 
   const { title, description, image } = item;
 
+  const favoriteButton = useRef();
+
   const handleExpandClick = () => {
     setExpanded(!expanded);
+  };
+
+  const favoriteItemHandler = () => {
+    if (!isFavorited) {
+      setIsFavorited(true);
+      favoriteButton.current.style.color = "red";
+      return;
+    }
+    favoriteButton.current.style.color = "rgba(0,0,0,0.54)";
+    setIsFavorited(false);
   };
 
   return (
@@ -66,7 +77,11 @@ const ProductDetailUI = ({ item, backToHome, addItem }) => {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites" style={iconButton}>
+        <IconButton
+          aria-label="add to favorites"
+          ref={favoriteButton}
+          onClick={favoriteItemHandler}
+        >
           <FavoriteIcon />
         </IconButton>
         <Button color="primary" onClick={addItem.bind(item)}>
