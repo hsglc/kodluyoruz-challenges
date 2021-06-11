@@ -1,5 +1,5 @@
 import User from "./User/User";
-import classes from './Users.module.css';
+import classes from "./Users.module.css";
 
 function Users({ users }) {
   return (

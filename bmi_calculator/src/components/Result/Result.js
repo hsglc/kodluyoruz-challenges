@@ -1,4 +1,4 @@
-import { useHistory } from "react-router-dom";
+
 import { useState, useEffect } from "react";
 
 import classes from "./Result.module.css";
@@ -16,7 +16,7 @@ function Result({ height, weight, name }) {
 
   const [showResult, setShowResult] = useState(true);
 
-  const history = useHistory();
+  
 
   const addtoStorageHandler = () => {
     try {
@@ -54,10 +54,10 @@ function Result({ height, weight, name }) {
               Your BMI : <span className={classes.bmi}>{bmi}</span>
             </p>
             <hr />
-            <p>
+            <div>
               
               <DietList bmi={bmi} />
-            </p>
+            </div>
             <hr />
           </div>
           <div>

@@ -9,7 +9,7 @@ function Header() {
           <li>
             <NavLink
               to="/"
-              className="normal"
+              className={classes.normal}
               activeClassName={classes.active}
               exact
             >
@@ -19,7 +19,7 @@ function Header() {
           <li>
             <NavLink
               to="/what's-bmi"
-              className="normal"
+              className={classes.normal}
               activeClassName={classes.active}
             >
               What's BMI

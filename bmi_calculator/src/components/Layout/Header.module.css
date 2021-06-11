@@ -9,8 +9,9 @@ li {
 }
 
 .normal {
-    background: #ccc;
+    
     color: #000;
+    font-size: 1.3rem;
 
 
 }
@@ -26,9 +27,9 @@ a {
 }
 
 .active {
-    background: gray;
-    font-weight: 600;
-    text-transform: uppercase;
+    border-bottom: 2px solid #000;
+    font-weight: bold;
+    color:rgb(206, 112, 206)
 }
 
 ul {

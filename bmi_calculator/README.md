@@ -1,6 +1,6 @@
 
 ## Demo
-[Live Demo](https://bmi-calculator-reactjs.netlify.app)
+[Live Demo](https://whatsbmicalculatorwithreact.netlify.app )
 
   
 ## BMI Calculator
