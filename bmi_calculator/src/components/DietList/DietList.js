@@ -29,17 +29,20 @@ function DietList({ bmi }) {
   } else if (bmi > 25.0 && bmi <= 29.9) {
     type = "overweight";
     diet = dietList.overweight;
-  } else if(bmi >= 30.0) {
+  } else if (bmi >= 30.0) {
     type = "obese";
     diet = dietList.obese;
-  }else {
+  } else {
     diet = "please type a valid information";
-    type = "Nothing"
+    type = "Nothing";
   }
 
   return (
     <>
       <h3>You are: {type.toUpperCase()}</h3>
+      <hr />
+      <h2>Diet List :</h2>
+      
       <ul>
         <li>{diet}</li>
       </ul>

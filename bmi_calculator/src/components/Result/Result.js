@@ -40,9 +40,7 @@ function Result({ height, weight, name }) {
     setUsers(fetchedUsers);
   }, []);
 
-  const changeLocationHandler = () => {
-    history.push("/what's-bmi");
-  };
+  
 
   return (
     <>
@@ -55,10 +53,12 @@ function Result({ height, weight, name }) {
             <p>
               Your BMI : <span className={classes.bmi}>{bmi}</span>
             </p>
+            <hr />
             <p>
-              <h2>Diet List</h2>
+              
               <DietList bmi={bmi} />
             </p>
+            <hr />
           </div>
           <div>
             <table className={classes.table}>
