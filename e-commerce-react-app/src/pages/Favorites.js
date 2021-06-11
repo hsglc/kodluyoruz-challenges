@@ -1,5 +1,5 @@
 import classes from "./Favorites.module.css";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import CartItem from "../components/Cart/CartItem/CartItem";
 import CartContext from "../store/cart-context";
 

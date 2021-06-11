@@ -19,8 +19,8 @@
   }
 
   .nav li {
-    margin-left: 1rem;
-    font-size: 1.1rem;
+    margin-left: .5rem;
+    font-size: 1rem;
   }
 
   .nav a {
@@ -40,5 +40,7 @@
 
   .nav a.active {
     text-decoration: underline;
-    text-decoration-thickness: .3rem;
+    border-bottom: 2px;
   }
+
+  
