@@ -91,7 +91,7 @@ function Result({ height, weight, name }) {
           <div className={classes.buttons}>
             <FormButton
               actionHandler={addtoStorageHandler}
-              name="Add to Local Storage"
+              name="Save"
             />
           </div>
         </div>
